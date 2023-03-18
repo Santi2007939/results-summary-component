@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="App">
       <Card 
-        firstResult={50}
-        secondResult={51}
-        thirdResult={53}
-        fourthResult={54}
+        firstResult={56}
+        secondResult={63}
+        thirdResult={93}
+        fourthResult={84}
       />
     </div>
   );

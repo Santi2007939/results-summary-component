@@ -45,7 +45,7 @@ export default function Tarjeta(props) {
            <div className={`Card__results ${resultado(props) >= 50 ? 'purple' : 'black'}`}>
                 <h1 className="Card__results__title">Your Result</h1>
                 <div className="Card__results__circle">
-                    <h3 className="Card__results__circle__number">{resultado(props)}</h3>
+                    <h2 className="Card__results__circle__number">{resultado(props)}</h2>
                     <p className="Card__results__circle__of">of 100</p>
                 </div>
                 <h2 className="Card__results__word">
