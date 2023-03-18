@@ -1,0 +1,303 @@
+@use './color' as *;
+@use './gradients' as *;
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+.Card {
+    background-color: $white;
+    display: flex;
+    font-family: 'Hanken Grotesk', sans-serif;
+    border-radius: 25px;
+    width: 98%;
+    max-width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: $paleBlue 0px 7px 29px 0px;
+
+    .black {
+        color: rgb(197, 9, 9) !important;
+        background-color: $backBlack !important;
+    }
+
+    .purple {
+        @include backGradient;
+        color: white;
+
+        .Card__results__title {
+            color: $lightLavender
+        } 
+
+        .Card__results__circle {
+            @include circleGradient;
+
+            &__number {
+                color: $white;
+            }
+
+            &__of {
+                color: $lightLavender;
+            }
+        }
+
+        .Card__results {
+            &__word {
+                color: $white;
+            }
+    
+            &__text {
+                color: $lightLavender;
+            }
+        }
+
+
+    }
+
+    .red {
+        color: $lightRed;
+        background-color: $backLightRed;
+    }
+
+    .yellow {
+        color: $orangeyYellow;
+        background-color: $backOrangeyYellow;
+    }
+
+    .green {
+        color: $greenTeal;
+        background-color: $backGreenTeal;
+    }
+
+    .blue {
+        color: $cobaltBlue;
+        background-color: $backCobaltBlue;
+    }
+
+    &__results {
+        width: 300px;
+        border-radius: 25px;
+        
+        &__title {
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            padding: 30px;
+        }
+
+        &__circle {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            margin: auto;
+            background: linear-gradient(rgb(28, 25, 25), rgb(79, 28, 28));
+
+            &__number {
+                font-size: 70px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-60%);
+                text-align: center;
+                font-weight: 700;
+            }
+
+            &__of {
+                font-size: 20px;
+                text-align: center;
+                position: relative;
+                top: 30%;
+                color: black;
+                transform: translateY(-50%);
+                font-weight: 500;
+            }
+        }
+
+        &__word {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        &__text {
+            font-size: 16px;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            color: black;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__info {
+
+        width: 300px;
+        margin-left: 20px;
+        margin-right: 40px;
+
+        &__title {
+            font-size: 23px;
+            font-weight: 700;
+            color: $darkGrayBlue;
+            padding: 30px;
+            padding-left: 0;
+            margin-bottom: -20px;
+        }
+
+        &__type {
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+
+            &__icon {
+                margin-right: 10px;
+            }
+            
+            &__text {
+                
+                font-weight: 800;
+
+                &__value {
+                    color: $darkGrayBlue; 
+                }
+
+                &__percentage {
+                    color: hsla(224, 30%, 27%, 50%);
+                }
+
+            }
+        }
+
+        &__button {
+            margin-top: 0;
+            margin-bottom: 35px;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: $darkGrayBlue;
+            color: $white;
+            width: 100%;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Hanken Grotesk', sans-serif;
+
+            &:hover {
+                @include backGradient;
+                cursor: pointer;
+            }
+        }
+    }
+
+   
+
+    @media screen and (max-width: 500px) {
+        display: block;
+        width: 100%;
+        
+            &__results {
+                
+                width: 100%;
+                display: block;
+                border-radius: 25px;
+                margin: 0 auto;
+                
+                &__title {
+                    font-size: 17px;
+                    font-weight: 700;
+                    text-align: center;
+                    padding: 10px;
+                }
+        
+                &__circle {
+                    width: 150px;
+                    height: 150px;
+        
+                    &__number {
+                        font-size: 60px;
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-60%);
+                        text-align: center;
+                        font-weight: 700;
+                    }
+        
+                    &__of {
+                        font-size: 20px;
+                    }
+                }
+        
+                &__word {
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    font-size: 25px;
+                }
+        
+                &__text {
+                    font-size: 16px;
+                    width: 90%;
+                    padding-bottom: 30px;
+                }
+            }
+        
+            &__info {
+                
+                margin: auto;
+                margin-top: -65px;
+        
+                &__title {
+                    font-size: 18px;
+                    padding: 30px;
+                    padding-left: 0;
+                    margin-bottom: -10px;
+                }
+        
+                &__type {
+                    padding: 10px;
+                    border-radius: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: space-between;
+        
+                    &__icon {
+                        margin-right: 10px;
+                    }
+                    
+                    &__text {
+                        
+                        font-weight: 800;
+        
+                        &__value {
+                            color: $darkGrayBlue; 
+                        }
+        
+                        &__percentage {
+                            color: hsla(224, 30%, 27%, 50%);
+                        }
+        
+                    }
+                }
+        
+                &__button {
+                    margin-top: -20;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 25px;
+                    background-color: $darkGrayBlue;
+                    color: $white;
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: 18px;
+                    font-family: 'Hanken Grotesk', sans-serif;
+        
+                    &:hover {
+                        @include backGradient;
+                        cursor: pointer;
+                    }
+                }
+            }
+    }
+}

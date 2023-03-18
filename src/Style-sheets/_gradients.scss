@@ -1,0 +1,9 @@
+@use './color' as *;
+
+@mixin backGradient {
+    background: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+}
+
+@mixin circleGradient {
+    background: linear-gradient($violetBlue, $persianBlue);
+}
